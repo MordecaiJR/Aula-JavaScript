@@ -1,0 +1,58 @@
+package exercicio;
+
+public class Pedido {
+	Integer codigo;
+	Double subtotal;
+	Double desconto;
+	//String total;
+	
+
+	 Integer getCodigo() {
+		return codigo;
+	}
+
+	 void setCodigo(Integer codigo) {
+		this.codigo = codigo;
+	}
+
+	 Double getSubtotal() {
+		return subtotal;
+	}
+
+	 void setSubtotal(Double subtotal) {
+		this.subtotal = subtotal;
+	}
+
+	 Double getDesconto() {
+		return desconto;
+	}
+
+	 Double setDesconto(Double desconto) {
+		return this.desconto = desconto;
+	}
+	 Double getTotal() {
+			
+			Double DescontoAplicado = setDesconto((getSubtotal()*setDesconto(desconto))/100);
+			return DescontoAplicado;
+			
+		}
+		public void setTotal(double total) {
+
+		}
+		
+		
+		Double getTotaldoProduto() {
+			Double totalComDesconto = getSubtotal() - getTotal();
+			return totalComDesconto;
+		}
+		void setTotaldoProduto() {
+			
+		}
+
+	 String obterDadosDoPedido() {
+			
+			String dadosCompletos = "Código do produto: "+ getCodigo() +" | "+"Subtotal do produto: " + getSubtotal() + " | "+ "Desconto do produto: "+ getDesconto() +" |"+"Total do produto:  "+getTotaldoProduto()+"."; 
+
+			return dadosCompletos;
+		}
+}
